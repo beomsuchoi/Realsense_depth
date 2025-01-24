@@ -96,7 +96,7 @@ void DepthImage::timer_callback()
 
         // 정규화 및 컬러맵
         cv::Mat depth_normalized;
-        depth_image.convertTo(depth_normalized, CV_8UC1, 255.0 / 10000.0); // 5m를 최대값으로
+        depth_image.convertTo(depth_normalized, CV_8UC1, 255.0 / 10000.0); // 10m를 최대값으로
         
         cv::Mat depth_colormap;
         cv::applyColorMap(depth_normalized, depth_colormap, cv::COLORMAP_JET);
