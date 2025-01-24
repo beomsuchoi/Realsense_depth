@@ -13,7 +13,7 @@ How to use This package
 1. 깃 클론
 
 ```cpp
-cd {your workspace}
+cd {your workspace/src}
 git clone https://github.com/beomsuchoi/Realsense_depth.git
 ```
 
