@@ -21,13 +21,21 @@ git clone https://github.com/beomsuchoi/Realsense_depth.git
 
 ```cpp
 cd {your workspace}
-colcon build --packages-select realsense_depth
+colcon build --packages-select depth_realsense
+source install/setup.bash
+```
+```cpp
+cd {your workspace}
+colcon build --packages-select depth_image
 source install/setup.bash
 
 ```
 3. run
 
 ```cpp
-ros2 run realsense_depth realsense_depth_node
+ros2 run depth_realsense depth_realsense_node
+```
 
+```cpp
+ros2 run depth_image depth_image_node
 ```
