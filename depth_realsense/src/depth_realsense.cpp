@@ -9,12 +9,16 @@ DepthRealsense::DepthRealsense()
     
     // ROS2 퍼블리셔 설정
     depth_pub_ = this->create_publisher<sensor_msgs::msg::Image>(
-        "depth_image", 10);
+        "depth_image", 10); 
     
     // 타이머 설정 (30Hz)
     timer_ = this->create_wall_timer(
         std::chrono::milliseconds(33),
         std::bind(&DepthRealsense::timer_callback, this));
+
+        // create_wall_timer 함수에 timer와 실행시킬 함수를 전달하면 주기적 실행을 할 수 있음
+        // create_wall_timer는 3개의 매개변수를 std::bind를 이용해서 넘겨야 함
+        // 0.033초마다 timer_callback 함수를 실행하도록 설정
 
     RCLCPP_INFO(this->get_logger(), "Depth RealSense node has been initialized");
 }
